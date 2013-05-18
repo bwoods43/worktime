@@ -1,0 +1,54 @@
+
+body {
+	background: white;
+	font-size: 9px;
+	background-image: none;
+	}
+
+
+
+#page {
+	padding-top: 1em;
+	width: auto;
+	border: 0;
+	margin-left: 0;
+	}
+
+
+/*Start hiding */
+
+#header, #footer {
+	display: none;
+}
+
+.basic_form start_form {
+	display: none;
+	
+}
+
+p.requires_project {
+	display: none;
+}
+
+a:link, a:visited {
+  display:none;
+}
+
+form  {
+display: none;
+}
+
+/* timesheet */
+table.timesheet { border: 0; border-collapse: collaspe; width: 600px; }
+table.timesheet tr th,table.timesheet tr td { 
+	font-size: 13px;
+	padding: 0; 
+	vertical-align: top; 
+}
+table.timesheet tr td { text-align: center; width: 5px; }
+
+
+/* page break */
+.main-header-row {
+page-break-before: always;
+}

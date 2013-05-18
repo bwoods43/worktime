@@ -1,0 +1,196 @@
+body { font: 14px Arial,Helvetica,Sans-serif; margin: 0; padding: 0; text-align: center;	background: #f0f0f0 url("images/bg.png") top left; line-height: 1.3333; }
+
+/* General */
+.success { margin: 1em 0; padding: 1em; color: #0a0; border: 1px solid; background: #fef9cc; }
+body #page .success a { color: #0a0; }
+.errors { margin: 1em 0; padding: 1em; color: #c00; border: 1px solid; background: #fef9cc; }
+.errors ul { margin: 0; padding: 0; list-style: none; }
+
+.left { text-align: left; }
+.right { text-align: right; }
+.center { text-align: center; }
+
+a { color: #036; }
+.indent { margin: 1em 3em; }
+
+.clear { clear: both; }
+
+#page { width: 960px; margin: 0 auto; text-align: left; }
+
+/* Login/Forgot */
+body#login { background: #f0f0f0 url("images/login_bg.png") top left repeat-x; padding: 100px 0 0; }
+body#login h1 { background: url("images/login_logo.png") top left no-repeat; text-indent: -9999px; height: 100px; margin: 0 245px; }
+body#login form { margin: 0 250px; padding: 0; font-size: 14px; color: #666; position: relative; }
+body#login form label { display: block; font-size: 16px; font-weight: bold; }
+body#login form input.text { font-size: 16px; color: #666; border: 1px solid #ccc; padding: .5em; width: 400px; }
+body#login form a { color: #aaa; }
+body#login form a.forgot { position: absolute; right: 44px; bottom: 98px; text-transform:lowercase; }
+body#login form input.button { font: 18px Arial,Helvetica,Sans-serif; color :#fff; background: url("images/btn_bg.png") top left repeat-x #67000c; border:1px solid #888; padding: .5em; border-radius: 20px; -webkit-border-radius: 20px; -moz-border-radius: 20px; -webkit-box-shadow: 1px 1px 1px #888; }
+
+
+#header { background: url("images/header_bg.png") top left repeat-x; color: #f7f7f7; text-align: center; font-size:14px; }
+#header .wrap { width: 960px; margin: 0 auto; text-align: right; height: 102px; position: relative; }
+#header h1 { margin: 0; padding: 0; height: 94px; width: 347px; overflow: hidden; position: absolute; top: 0; left: 0; }
+#header h1 a { display: block; padding: 94px; font-size: 4px; background: url("images/logo.png") top left no-repeat; }
+#header a { color: #e7e7e7; }
+#header a:hover { color: #fff; }
+#header p { margin: 0; padding: 24px 0 0; }
+
+#page #options { float: left; width: 200px; }
+#page #options h4 { margin: 0 0 1em; }
+
+#page #options ul { margin: 0; padding: 0; list-style: none; }
+#page #options ul li ul { margin: 0 0 1em 1.5em; list-style: square; }
+
+#page #work_area { margin: 0 0 0 220px; line-height: 1.5; }
+
+h1,h2,h3,h4 { color: #1b2934; }
+h2 { font-size: 24px; letter-spacing: -1px; }
+h3 { font-size: 18px; letter-spacing: -1px; }
+
+.basic_form label { color:#666; display: block; cursor: pointer; font-weight: bold; font-size: 16px; }
+.basic_form input.text { border: 1px solid #ccc; padding: .5em; color: #666; font: 14px Arial,Sans-serif; }
+.basic_form textarea { border: 1px solid #ccc; padding: .5em; color: #666; font: 14px Arial,Sans-serif; }
+.basic_form select { border: 1px solid #ccc; padding: .5em; color: #666; font: 14px Arial,Sans-serif; }
+.basic_form .button { font: bold 14px Arial,Sans-serif; border: 1px solid #666; background: url("images/btn_bg_gray.png") 0 -4px repeat-x #a1a1a1; font-size: 14px; color: #fff; padding: .5em 1em; cursor: pointer; }
+.basic_form .button { 
+	border-radius: 1.5em;
+	-moz-border-radius: 1.5em;
+	-webkit-border-radius: 1.5em;
+	text-shadow: 1px 1px 0 #444;
+	-moz-text-shadow: 1px 1px 0 #444;
+	-webkit-text-shadow: 1px 1px 0 #444;
+	box-shadow: 1px 1px 3px #666; 
+	-moz-box-shadow: 1px 1px 2px #888; 
+	-webkit-box-shadow: 1px 1px 2px #888; 
+}
+.basic_form label.inline { display: inline; }
+.basic_form label.checkbox { font-weight: normal; }
+.basic_form .multiple_select { width: 450px; }
+.verify_no {
+	color: #FFF;
+	background-color: #b10037;
+	padding-left: 5px;
+	margin: 0px;
+}
+.verify_yes {
+	color: #FFF;
+	background-color: #006600;
+	padding: 5px;
+	margin: 0px;
+}
+table.listing { border-collapse: collapse; width: 92%; border:0; font-size: 14px; margin: 0; }
+table.listing a { text-decoration: none; }
+table.listing a:hover { text-decoration: underline; }
+table.listing a.delete { color: #c00; }
+table.listing th { border-bottom: 2px solid #ccc; vertical-align:bottom; padding: .5em 0; }
+table.listing td { vertical-align: top; padding: .5em 0; padding: .5em 0; border-bottom: 1px solid #e7e7e7; }
+table.listing td .row-actions { font-size: 12px; color: #666; height: 12px;  }
+
+p.note { font-size: 11px; color: #444; margin: 1em 0; font-style: italic; }
+p.note strong { background: #ffa; padding: 2px; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
+
+p.paging { font-size: 14px; text-align:right; margin: 1em 0 0; }
+p.paging a,p.paging span { padding: 3px 6px; border: 1px solid #ccc; text-decoration: none; background: #fff; }
+p.paging a:hover { background: #f0f0f0; }
+p.paging span { background: #036; color: #fff; }
+
+#footer { clear:both; color: #666; font-size: 12px; padding: 1em 0 0; margin: 2em 0 0; border-top: 1px dotted #ccc;  }
+#footer a { color: #666; }
+
+/* Time Entry */
+/* 7/3/10 baw - removed position to allow sidebar to work */
+/* #time_entry { position: relative; } */
+#time_entry h3 { font-weight: normal; }
+#time_entry h3 { font-weight: normal; }
+#time_entry h4 { font-size: 14px; font-weight: normal; letter-spacing: none; }
+#time_entry .softer { color: #878787; }
+#time_entry h4.softer { margin-top: -1em; }
+#time_entry form label { color: #666; display: block; }
+#time_entry form input,#time_entry form select { font-size: 14px; vertical-align: middle; }
+
+#time_entry form textarea { height: 30px; font-size: 11px;}
+
+#time_entry form div.employee,
+#time_entry form div.note,
+#time_entry form div.task,
+#time_entry form div.hours {
+	float: left; 
+	padding: 0 1em;
+}
+#time_entry form div.clear { float: none; }
+#time_entry form div.submit { padding: 1em 0 0; padding-right: 0; }
+#time_entry form div.submit input { background: url("images/btn_green_check.png") top left no-repeat #62b42c; padding: 6px 1em 6px 34px; }
+
+#time_entry form div.add input { background: url("images/btn_gray_plus.png") top left no-repeat #a7a7a7; padding: 6px 1em 6px 34px; }
+#time_entry form div.add input.remove_button { color :#fff; background: url("images/btn_bg.png") top left repeat-x #67000c; border:1px solid #888; padding-left: 1em;  }
+
+#time_entry div.add { padding-top: 2.5em; font-size: 12px; }
+#time_entry form span.add_button { color: #62b42c; padding-right: 1em; cursor: pointer; text-decoration: underline; }
+#time_entry form span.remove_button { color: #67000c; cursor: pointer; text-decoration: underline; }
+
+#time_entry .inline_error { padding: 0 1em .5em; color: #ca0000; font-size: 12px; font-style: italic;}
+#time_entry .inline_error a { color: #ca0000;}
+#time_entry .line { border-bottom: 1px dotted #ddd; padding: .5em 0; float: none; }
+
+#jumper {
+	font-size: 12px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#time_entry form .highlight { background: #fefeaa; }
+
+#time_entry .view_time { float: right; }
+
+/* Review Time */
+#time_review { position: relative; }
+#time_review table { width: 100%; }
+#time_review table tr td.employee { width: 20%; }
+#time_review table tr td.task { width: 20%; }
+#time_review table tr td.notes { width: 30%; }
+#time_review table tr td.hours { width: 10%; }
+
+table.report { border: 0; border-collapse: collaspe; width: 75%; }
+table.report tr th,table.report tr td { padding: .25em; border-bottom: 1px dotted #ccc; vertical-align: top; }
+table.report tr td { text-align: right; }
+
+.report .positive { color:#62b42c;}
+.report .negative { color:#af000c;}
+
+.report .chart { background: #fff; padding: 1em; margin: 1em 0; border: 1px solid #ccc; text-align: center; width: 75%; }
+.report .chart h3 { margin: 0; }
+
+.basic_form .the_note { margin-bottom: 1em; padding-bottom: 1em; border-bottom: 1px dotted #ccc; }
+.basic_form #the_note { width: 92%; height: 80px; font-size: 1em; }
+#time_review .note_text { margin: 0 0 2em; }
+#time_review #the_note textarea { border: 1px solid #ccc; padding: .5em; color: #666; font: 14px Arial,Sans-serif; width: 98%; height: 80px; }
+
+/* timesheet */
+table.timesheet { border: 0; border-collapse: collaspe; width: 100%; }
+table.timesheet tr th,table.timesheet tr td { 
+	padding: .25em; 
+	vertical-align: top; 
+}
+table.timesheet tr td { text-align: right; width: 15px; }
+table.timesheet .name-row { 
+	color: #B10037;
+	text-align: left; 
+	border-top: 2px solid #000;
+}
+table.timesheet .secondary-name-row { 
+	color: #333333;
+	text-align: left; 
+	border: 0px;
+}
+table.timesheet .weekdays { text-align: center; }
+table.timesheet .header { font-weight: bold;}
+
+table.timesheet .end-cell {
+	border-right: 1px solid #000;
+}
+
+table.timesheet .shaded-cell {
+	background-color: #DFDFDF;
+}
