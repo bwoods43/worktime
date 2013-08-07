@@ -1,4 +1,6 @@
 <?php
+require_once './app/vars.php'; // load variables after setting session
+
 class Managers_reports_Controller extends Authrequired_Controller {
 
 	public $auth_type_required = User::TYPE_MANAGER;
@@ -145,24 +147,24 @@ class Managers_reports_Controller extends Authrequired_Controller {
 				}
 				$current_child_id = $child_id;
 			}
-				
+
 			// add regular hours
-			if ($entry->task_id != 5 && $entry->task_id != 10) {
+			if ($entry->task_id != RAIN_TASK_ID && $entry->task_id != DRIVE_TASK_ID) {
 				$data[$parent_id]['children'][$child_id]['days'][$entry->work_date]['regular'] += $entry->hours;
 			}
 
 			// add rain hours
-			if ($entry->task_id == 5) {
+			if ($entry->task_id == RAIN_TASK_ID) {
 				$data[$parent_id]['children'][$child_id]['days'][$entry->work_date]['rain'] += $entry->hours;
 			}
 
 			// add drive hours
-			if ($entry->task_id == 10) {
+			if ($entry->task_id == DRIVE_TASK_ID) {
 				$data[$parent_id]['children'][$child_id]['days'][$entry->work_date]['drive'] += $entry->hours;
 			}						
 			
 			// count per diem
-			if ($entry->per_diem || $entry->work_date< '2010-12-10') {
+			if ($entry->per_diem || $entry->work_date < PER_DIEM_CHANGES_2010_DATE) {
 				$data[$parent_id]['children'][$child_id]['days'][$entry->work_date]['per diem'] = 1;
 				$data[$parent_id]['per diem'][$entry->work_date] = 1;	
 			}

@@ -1,3 +1,65 @@
+<?php
+	global $vars; // need state, possibly other variables set here
+	
+	// 07/27/13 baw use states array instead of storing in db
+	function getStates() {
+		$state_list = array(
+		'AL'=>"Alabama",
+    'AK'=>"Alaska", 
+    'AZ'=>"Arizona", 
+    'AR'=>"Arkansas", 
+    'CA-N'=>"Northern California", 
+    'CA-S'=>"Southern California", 
+    'CO'=>"Colorado", 
+    'CT'=>"Connecticut", 
+    'DE'=>"Delaware", 
+    'DC'=>"District Of Columbia", 
+    'FL'=>"Florida", 
+    'GA'=>"Georgia", 
+    'HI'=>"Hawaii", 
+    'ID'=>"Idaho", 
+    'IL'=>"Illinois", 
+    'IN'=>"Indiana", 
+    'IA'=>"Iowa", 
+    'KS'=>"Kansas", 
+    'KY'=>"Kentucky", 
+    'LA'=>"Louisiana", 
+    'ME'=>"Maine", 
+    'MD'=>"Maryland", 
+    'MA'=>"Massachusetts", 
+    'MI'=>"Michigan", 
+    'MN'=>"Minnesota", 
+    'MS'=>"Mississippi", 
+    'MO'=>"Missouri", 
+    'MT'=>"Montana",
+    'NE'=>"Nebraska",
+    'NV'=>"Nevada",
+    'NH'=>"New Hampshire",
+    'NJ'=>"New Jersey",
+    'NM'=>"New Mexico",
+    'NY'=>"New York",
+    'NC'=>"North Carolina",
+    'ND'=>"North Dakota",
+    'OH'=>"Ohio", 
+    'OK'=>"Oklahoma", 
+    'OR'=>"Oregon", 
+    'PA'=>"Pennsylvania", 
+    'RI'=>"Rhode Island", 
+    'SC'=>"South Carolina", 
+    'SD'=>"South Dakota",
+    'TN'=>"Tennessee", 
+    'TX'=>"Texas", 
+    'UT'=>"Utah", 
+    'VT'=>"Vermont", 
+    'VA'=>"Virginia", 
+    'WA'=>"Washington", 
+    'WV'=>"West Virginia", 
+    'WI'=>"Wisconsin", 
+    'WY'=>"Wyoming");
+    return $state_list;
+  }	
+?>
+
 		<p>
 			<label for="project[project_name]">
 				Project Name:
@@ -17,6 +79,22 @@
 				<?php endforeach; endif; ?>
 			</select>
 		</p>
+<?php if ($vars['use_state_for_project']) { ?>
+		<p>
+			<label for="project[state]">
+				State:
+			</label>
+			<select name="project[state]" id="project[state]" tabindex="1">
+				<option value="">- Select state -</option>
+				<?php 
+				$state_list = getStates();
+				foreach ($state_list as $state_abbrev=>$state) {
+					print '<option value="' . $state_abbrev . '" ' . ($state_abbrev == $this->clean['project']['state']? 'selected=selected':'') . '>' . $state . '</option>';
+				}
+				?>
+			</select>
+		</p>
+<?php } ?>
 		<p>
 			<label for="project[start_date]">
 				Start Date:

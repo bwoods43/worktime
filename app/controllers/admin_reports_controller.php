@@ -24,6 +24,7 @@ class Admin_reports_Controller extends Authrequired_Controller {
 		
 	// 7/3/10 baw - update function to create timesheet
 	public function timesheet($report_type="by-employee") {
+		global $vars;
 	
 		/* 8/24/10 baw - so far, we have two possible reports. we're listing the time by people and then project ($report_type = by-employee). we are also listing by project then people ($report_type = by-project). to account for this within one function, we will define the top level as "parent" and second level as "child." Therefore, the person's name and the project name will be either parent or child in the following script
 		NOTE: by-employee is the default report because that was the first one we created */
@@ -173,36 +174,24 @@ class Admin_reports_Controller extends Authrequired_Controller {
 				}
 				$current_child_id = $child_id;
 			}
-
-// 02/11/13 baw account for tasks for different offices
-			switch ($_SESSION['beynon_office_id']) {
-				case 1:
-					$rain_day_task = 5;
-					$drive_task = 10;
-				break;
-				case 2:
-					$rain_day_task = 205;
-					$drive_task = 2010;				
-				break;
-			}
-				
+ 
 			// add regular hours
-			if ($entry->task_id != $rain_day_task && $entry->task_id != $drive_task) {
+			if ($entry->task_id != $vars['rain_task_id'] && $entry->task_id != $vars['drive_task_id']) {
 				$data[$parent_id]['children'][$child_id]['days'][$entry->work_date]['regular'] += $entry->hours;
 			}
 
 			// add rain hours
-			if ($entry->task_id == $rain_day_task) {
+			if ($entry->task_id == $vars['rain_task_id']) {
 				$data[$parent_id]['children'][$child_id]['days'][$entry->work_date]['rain'] += $entry->hours;
 			}
 
 			// add drive hours
-			if ($entry->task_id == $drive_task) {
+			if ($entry->task_id == $vars['drive_task_id']) {
 				$data[$parent_id]['children'][$child_id]['days'][$entry->work_date]['drive'] += $entry->hours;
 			}
 			
 			// count per diem
-			if ($entry->per_diem || $entry->work_date< '2010-12-10') {
+			if ($entry->per_diem || $entry->work_date < $vars['per_diem_changes_2010_date']) {
 				$data[$parent_id]['children'][$child_id]['days'][$entry->work_date]['per diem'] = 1;
 				$data[$parent_id]['per diem'][$entry->work_date] = 1;	
 			}

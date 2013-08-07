@@ -19,6 +19,8 @@ class Admin_projects_Controller extends Authrequired_Controller {
 	}
 	
 	private function validate_clean() {
+		global $vars;
+		
 		$project = $this->view->clean['project'];
 		if ( empty($project['project_name']) ) {
 			$this->view->errors[] = 'Please enter a project name.';
@@ -26,6 +28,9 @@ class Admin_projects_Controller extends Authrequired_Controller {
 		$mgr = new User($project['manager_id']); 
 		if ( !$mgr->ID ) {
 			$this->view->errors[] = 'Please select a manager to enter time records for this project.';
+		}
+		if ( empty($project['state']) && $vars['use_state_for_project']) {
+			$this->view->errors[] = 'Please enter a state for this project.';
 		}
 		if ( empty($project['start_date']) ) {
 			$this->view->errors[] = 'Please enter a start date for this project.';

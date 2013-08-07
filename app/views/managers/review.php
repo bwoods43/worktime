@@ -5,7 +5,7 @@
 	<?php echo $this->render('/managers/jumper'); ?>
 
 	<h2>
-		<small>Review Time Entries</small>
+		<small>Review Time Entries</small> <span class="small-header">(<a href="/managers/add/<?php echo htmlentities($this->project->ID); ?>/?date=<?php echo htmlentities(date("m/d/Y", $this->date)); ?>">Add new entries for this project and date</a>)</span>
 		<br />
 		<?php echo htmlentities($this->project->project_name); ?> : <?php echo date("F j, Y", $this->date); ?>
 	</h2>

@@ -21,7 +21,7 @@ function addHeaders($start_date, $end_date) {
 		echo '<td class="weekdays header end-cell" colspan="3">Friday</td>';
 		echo '<td class="weekdays header end-cell"colspan="3">Saturday</td>';
 		echo '<td class="weekdays header end-cell" colspan="3">Sunday</td>';
-		echo '<td class="weekdays header end-cell" colspan="2">&nbsp;</td>';
+		echo '<td class="weekdays header end-cell" colspan="3">&nbsp;</td>';
 		echo '<td class="header">Per diem</td>';
 		echo '</tr>';
 		
@@ -35,7 +35,7 @@ function addHeaders($start_date, $end_date) {
     	$check_date = date ("Y-m-d", strtotime ("+1 day", strtotime($check_date)));
 		}
 		
-		echo '<td class="header end-cell">TOTAL</td><td class="header end-cell">TOTAL</td><td class="header end-cell"># of days</td></tr>';
+		echo '<td class="header">TOTAL</td><td class="header end-cell" colspan="2"></td><td class="header end-cell"># of days</td></tr>';
 		
 		// create headers for task types
 		echo '<tr><td class="end-cell">&nbsp;</td>';
@@ -45,7 +45,7 @@ function addHeaders($start_date, $end_date) {
     	$check_date = date ("Y-m-d", strtotime ("+1 day", strtotime($check_date)));
 		}
 		
-		echo '<td class="header end-cell">SITE</td><td class="header end-cell">Drive/Rain</td><td>&nbsp;</td></tr>';
+		echo '<td class="header end-cell">SITE</td><td class="header end-cell">Drive</td><td class="header end-cell">Rain</td><td>&nbsp;</td></tr>';
 
 }
 ?>
@@ -120,7 +120,7 @@ function addHeaders($start_date, $end_date) {
 					$per_diem_total = 0;
 				}
 
-				echo '<tr><td class="name-row" colspan="25">' . $entry['parent']  . ' (per diem: ' . $per_diem_total .')</td></tr>';
+				echo '<tr><td class="name-row" colspan="26">' . $entry['parent']  . ' (per diem: ' . $per_diem_total .')</td></tr>';
 				$row_counter++;
 								
 				foreach ($entry['children'] as $child) {
@@ -128,7 +128,7 @@ function addHeaders($start_date, $end_date) {
 					// zero out totals here
 					$regular = $drive_rain = $days_at_work = 0;
 
-					echo '<tr><td class="secondary-name-row" colspan="25">' . $child['child'] . '</td></tr>';
+					echo '<tr><td class="secondary-name-row" colspan="26">' . $child['child'] . '</td></tr>';
 					
 					echo '<tr><td class="end-cell">&nbsp;</td>';
 					
@@ -156,7 +156,8 @@ function addHeaders($start_date, $end_date) {
 					}
 					
 					echo '<td>' . $regular . '</td>';
-					echo '<td>' . $drive_rain . '</td>';
+					echo '<td>' . $drive . '</td>';
+					echo '<td>' . $rain . '</td>';
 // 8/4/10 baw do not show per diem if project is yard	
 					echo '<td>' . ($child['child'] == 'Yard' ? 0:$days_at_work) . '</td>';
 
