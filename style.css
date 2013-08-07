@@ -194,3 +194,8 @@ table.timesheet .end-cell {
 table.timesheet .shaded-cell {
 	background-color: #DFDFDF;
 }
+
+.small-header {
+	font-size: 60%;
+	margin-left: 20px;
+}

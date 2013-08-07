@@ -15,9 +15,16 @@ $(function(){
 		$("form .add_button").unbind("click").click(function(){
 			var $new = $('.line:eq(0)').clone();
 			$new.removeClass("highlight");
-			$('select', $new).each(function(){
-				$(this).get(0).selectedIndex = 0;
-			});
+			$('select', $new).each(function(index){
+			var numItems = $('.employee select').length;
+				if (index == 0) {
+					// need to default employee to previous employee
+					$(this).get(0).selectedIndex = $('.employee select').eq(numItems-1).prop("selectedIndex");
+				} else {
+					$(this).get(0).selectedIndex = 0;				
+				}
+			});			
+
 			$('input.text', $new).val("");
 			
 			$('input.checkbox', $new).attr('checked');
